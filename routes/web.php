@@ -9,3 +9,4 @@ Route::post('/', [TaskController::class, 'store']);
 Route::patch('tasks/{id}', [TaskController::class, 'update']);
 Route::delete('/tasks/{id}', [TaskController::class, 'delete']);
 Route::get('/tasks/edit/{name}', [TaskController::class, 'edit'])->name('edite');
+Route::put('/tasks/{id}', [TaskController::class, 'editUpdate']);

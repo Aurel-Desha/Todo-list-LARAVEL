@@ -2,8 +2,9 @@
 
 @section('content')
 <div>
-    <form method="POST" action="">
+    <form method="POST" action="/tasks/{{$task->id}}">
         <div class="mb-3">
+            @method('PUT')
           @csrf
           <label for="formGroupExampleInput" class="form-label">Vous voullez changer la tache <span style="font-weight: 700">"{{$task->name}}"</span></label>
           <input type="text" class="form-control" id="name" name="name" placeholder="Example input placeholder">

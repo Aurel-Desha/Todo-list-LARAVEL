@@ -69,6 +69,19 @@ class TaskController extends Controller
         return view('tasks.edite', compact('task'));
     }
 
+
+    public function editUpdate ($id, Request $request)
+    {
+        /*$request->validate([
+            'name'=>'rquired|string|max:255'
+        ]);*/
+
+        $task = Task::find($id);
+        $task->name = $request->input('name');
+        $task-> update();
+        return redirect('/tasks')->with('success', 'update success');
+    }
+
     /**
      * Update the specified resource in storage.
      */
@@ -91,4 +104,5 @@ class TaskController extends Controller
         $task->delete();
         return redirect('/tasks');
     }
+
 }
